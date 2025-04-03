@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lilita+One&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="title-container">
+        <div class="title-word">
+            <span class="letter">M</span>
+            <span class="letter">E</span>
+            <span class="letter">M</span>
+            <span class="letter">O</span>
+            <span class="letter">R</span>
+            <span class="letter">Y</span>
+        </div>
+            <div class="title-word">
+            <span class="letter">G</span>
+            <span class="letter">A</span>
+            <span class="letter">M</span>
+            <span class="letter">E</span>
+        </div>
+    </div>  <!-- ✅ Correctly closed title-container -->
+    
+    <div class="tries-container">
+        Number of tries left: <span id="tries">4</span>
+    </div>
+    <div class="difficulty-container">Difficulty: <span id="medium">Medium</span></div>
+    <div class="back-btn">↖</div>
+    
+        <div class="container">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/winter.jpg" alt="Winter" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/winter.jpg" alt="Summer" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/lily-banse-9eH2QtfQAjI-unsplash.jpg" alt="Lily" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/lily-banse-9eH2QtfQAjI-unsplash.jpg" alt="Forest" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/summer.jpg" alt="Winter" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/summer.jpg" alt="Summer" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/forest.jpg" alt="Lily" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Click to Flip</h2>
+                    </div>
+                    <div class="card-back">
+                        <img src="./images/forest.jpg" alt="Forest" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="winlose">
+            <span class="typed"></span>
+        </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

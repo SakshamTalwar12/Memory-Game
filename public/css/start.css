@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.title-container {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-word {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.letter {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 2px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: dropIn 0.6s forwards;
+    display: inline-block;
+}
+
+.letter:nth-child(1) { animation-delay: 0.1s; }
+.letter:nth-child(2) { animation-delay: 0.2s; }
+.letter:nth-child(3) { animation-delay: 0.3s; }
+.letter:nth-child(4) { animation-delay: 0.4s; }
+.letter:nth-child(5) { animation-delay: 0.5s; }
+.letter:nth-child(6) { animation-delay: 0.6s; }
+.letter:nth-child(7) { animation-delay: 0.7s; }
+.letter:nth-child(8) { animation-delay: 0.8s; }
+.letter:nth-child(9) { animation-delay: 0.9s; }
+.letter:nth-child(10) { animation-delay: 1.0s; }
+.letter:nth-child(11) { animation-delay: 1.1s; }
+
+.letter:nth-child(odd) {
+    color: #ffffff;
+}
+
+.letter:nth-child(even) {
+    color: #e6e6ff;
+}
+
+.memory-icon {
+    font-size: 2.5rem;
+    margin: 0 8px;
+    animation: spin 10s linear infinite;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+}
+
+.start-button {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: not-allowed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 1s ease 1.8s forwards;
+    margin-bottom: 40px;
+}
+
+.start-button.active {
+    background: white;
+    color: #764ba2;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.start-button.active:hover {
+    transform: scale(1.05);
+}
+
+.start-button.active:active {
+    transform: scale(0.95);
+}
+
+.start-button::before, .start-button::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 40%;
+    top: -50%;
+    left: -50%;
+    animation: rotate 12s linear infinite;
+}
+
+.start-button::after {
+    animation: rotate 15s linear infinite;
+    opacity: 0.5;
+}
+
+.difficulty-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease 2.1s forwards;
+}
+
+.difficulty-option {
+    padding: 12px 24px;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.difficulty-option:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.difficulty-option.active {
+    background: white;
+    color: #764ba2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instruction-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease 2.4s forwards;
+}
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float linear infinite;
+}
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
