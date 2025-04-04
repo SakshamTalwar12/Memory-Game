@@ -1,11 +1,16 @@
-const express = require("express");
-const path = require("path");
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Required to simulate __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());  // To parse JSON requests
+app.use(express.json()); // To parse JSON requests
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
@@ -29,7 +34,7 @@ app.post("/", (req, res) => {
         return res.status(400).json({ error: "Invalid difficulty selected." });
     }
 
-    res.json({ redirectUrl });  // Send response with redirect URL
+    res.json({ redirectUrl }); // Send response with redirect URL
 });
 
 app.listen(PORT, () => {
